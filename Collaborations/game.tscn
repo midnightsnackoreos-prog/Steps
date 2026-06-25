@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://rmxoid0vm7wu"]
 
 [ext_resource type="PackedScene" uid="uid://bqvdg7pouxqmn" path="res://Tristan/Scenes/game.tscn" id="1_f3pip"]
-[ext_resource type="PackedScene" uid="uid://btn72fbhphq7r" path="res://Ryan/scenes/shrine.tscn" id="3_378fo"]
 
 [node name="Game" unique_id=2025736409 instance=ExtResource("1_f3pip")]
 
@@ -11,4 +10,4 @@ z_index = 2
 [node name="Camera2D" parent="Player" index="2" unique_id=1307286276]
 zoom = Vector2(1.21, 1.21)
 
-[node name="Shrine" parent="." index="5" unique_id=2013248834 instance=ExtResource("3_378fo")]
+[editable path="game"]

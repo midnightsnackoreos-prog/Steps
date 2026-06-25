@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ocxd"]
 size = Vector2(14, 19)
 
-[node name="game" type="Node2D" unique_id=366770284]
+[node name="wisp" type="Node2D" unique_id=366770284]
 
 [node name="wisp" type="CharacterBody2D" parent="." unique_id=1034952120]
 script = ExtResource("1_737wa")
