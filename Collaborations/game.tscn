@@ -42,10 +42,13 @@ grow_horizontal = 2
 grow_vertical = 2
 autowrap_mode = 3
 
-[node name="CollisionShape2D" parent="Shrine/Area2D" parent_id_path=PackedInt32Array(239808019, 1876874475) index="0" unique_id=1900596573]
+[node name="Area2D" parent="Shrine" index="1" unique_id=1876874475]
+position = Vector2(-6, -247)
+
+[node name="CollisionShape2D" parent="Shrine/Area2D" index="0" unique_id=1900596573]
 position = Vector2(-2, 78)
 
-[node name="InteractLabel" parent="Shrine/Area2D" parent_id_path=PackedInt32Array(239808019, 1876874475) index="2" unique_id=1091388719]
+[node name="InteractLabel" parent="Shrine/Area2D" index="2" unique_id=1091388719]
 offset_left = -61.0
 offset_top = 40.0
 offset_right = 63.0
