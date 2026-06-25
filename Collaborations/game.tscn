@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cm4inw2paf7ug" path="res://Collaborations/player.tscn" id="1_lniwr"]
 [ext_resource type="PackedScene" uid="uid://cpkpa0dmt5c6t" path="res://Ryan/scenes/sign.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://p41n4cfshls6" path="res://Milton/SCENES/wisp.tscn" id="3_cfvqc"]
+[ext_resource type="PackedScene" uid="uid://r4ti7v0v4ev4" path="res://Ryan/scenes/shrine.tscn" id="5_cfvqc"]
 
 [node name="Game" type="Node2D" unique_id=2025736409]
 
@@ -19,3 +20,11 @@ zoom = Vector2(1.84, 1.84)
 [node name="wisp" parent="." unique_id=2056561412 instance=ExtResource("3_cfvqc")]
 
 [node name="Sign" parent="." unique_id=1176966440 instance=ExtResource("2_feb5d")]
+
+[node name="Shrine" parent="." unique_id=239808019 instance=ExtResource("5_cfvqc")]
+position = Vector2(2, -342)
+
+[node name="CollisionShape2D" parent="Shrine/Area2D" parent_id_path=PackedInt32Array(239808019, 1876874475) index="0" unique_id=1900596573]
+position = Vector2(-2, 78)
+
+[editable path="Shrine"]
