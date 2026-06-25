@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://das3b27j8k03q"]
 
-[ext_resource type="Texture2D" uid="uid://on0x0ucy3u3h" path="res://Ryan/ASSET/Gemini_Generated_Image_uh6kn1uh6kn1uh6k-removebg-preview (1).png" id="1_1sic0"]
-[ext_resource type="Script" uid="uid://bygk3l2y12c7" path="res://Ryan/scenes/shrine.gd" id="1_40wtv"]
+[ext_resource type="Texture2D" path="res://Ryan/ASSET/Gemini_Generated_Image_uh6kn1uh6kn1uh6k-removebg-preview (1).png" id="1_1sic0"]
+[ext_resource type="Script" path="res://Ryan/scenes/shrine.gd" id="1_40wtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmvtr"]
 size = Vector2(247, 143)
@@ -15,10 +15,6 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -222.0
-offset_top = -471.0
-offset_right = -909.0
-offset_bottom = -386.0
 grow_horizontal = 2
 grow_vertical = 0
 
