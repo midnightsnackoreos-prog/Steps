@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cm4inw2paf7ug" path="res://Collaborations/player.tscn" id="1_lniwr"]
 [ext_resource type="PackedScene" uid="uid://cpkpa0dmt5c6t" path="res://Ryan/scenes/sign.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://p41n4cfshls6" path="res://Milton/SCENES/wisp.tscn" id="3_cfvqc"]
+[ext_resource type="PackedScene" uid="uid://das3b27j8k03q" path="res://Ryan/scenes/shrine.tscn" id="5_cfvqc"]
 
 [node name="Game" type="Node2D" unique_id=2025736409]
 
@@ -19,3 +20,38 @@ zoom = Vector2(1.84, 1.84)
 [node name="wisp" parent="." unique_id=2056561412 instance=ExtResource("3_cfvqc")]
 
 [node name="Sign" parent="." unique_id=1176966440 instance=ExtResource("2_feb5d")]
+
+[node name="Shrine" parent="." unique_id=239808019 instance=ExtResource("5_cfvqc")]
+position = Vector2(2, -342)
+
+[node name="Panel" parent="Shrine/CanvasLayer" parent_id_path=PackedInt32Array(239808019, 1403950919) index="0" unique_id=1261798101]
+visible = false
+offset_left = 288.0
+offset_top = -141.0
+offset_right = -357.0
+offset_bottom = -41.0
+
+[node name="DialogueLabel" parent="Shrine/CanvasLayer/Panel" index="0" unique_id=880183887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 3
+
+[node name="Area2D" parent="Shrine" index="1" unique_id=1876874475]
+position = Vector2(-6, -247)
+
+[node name="CollisionShape2D" parent="Shrine/Area2D" index="0" unique_id=1900596573]
+position = Vector2(-2, 78)
+
+[node name="InteractLabel" parent="Shrine/Area2D" index="2" unique_id=1091388719]
+offset_left = -61.0
+offset_top = 40.0
+offset_right = 63.0
+offset_bottom = 63.0
+
+[editable path="Shrine"]
