@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://rmxoid0vm7wu"]
+
+[ext_resource type="PackedScene" uid="uid://bqvdg7pouxqmn" path="res://Tristan/Scenes/game.tscn" id="1_f3pip"]
+
+[node name="Game" unique_id=2025736409 instance=ExtResource("1_f3pip")]
