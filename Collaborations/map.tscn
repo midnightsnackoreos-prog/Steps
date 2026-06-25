@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dhalq4cevpbsh"]
+
+[ext_resource type="PackedScene" uid="uid://cm4inw2paf7ug" path="res://Collaborations/player.tscn" id="1_6m7i7"]
+[ext_resource type="PackedScene" uid="uid://2kbctv414qu3" path="res://Ryan/scenes/map.tscn" id="2_s7e1r"]
+[ext_resource type="PackedScene" uid="uid://cpkpa0dmt5c6t" path="res://Ryan/scenes/sign.tscn" id="3_0kpy2"]
+
+[node name="MAP" type="Node2D" unique_id=251857091]
+
+[node name="Player" parent="." unique_id=448614660 instance=ExtResource("1_6m7i7")]
+z_index = 2
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1304146618]
+position = Vector2(-6, -6)
+zoom = Vector2(1.84, 1.84)
+
+[node name="Map2" parent="." unique_id=1295569904 instance=ExtResource("2_s7e1r")]
+
+[node name="Map" parent="." unique_id=1152020396 instance=ExtResource("2_s7e1r")]
+
+[node name="Sign" parent="." unique_id=1176966440 instance=ExtResource("3_0kpy2")]
