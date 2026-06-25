@@ -5,7 +5,6 @@ extends Area2D
 @onready var interact_label = $InteractLabel
 
 
-var used = false
 var player_near = false
 
 func _on_body_entered(body):
@@ -32,13 +31,3 @@ func _process(_delta):
 			panel.visible = true
 			dialogue.text = ("You have regained 25 energy.")
 			interact_label.visible = false
-			
-			
-func _activate(player):
-	if used:
-		return
-	used = true
-	print("Shrine activated")
-	
-func do_effect(player):
-	player.health = player.max_health

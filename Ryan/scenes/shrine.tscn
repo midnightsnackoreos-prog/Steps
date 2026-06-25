@@ -1,45 +1,55 @@
 [gd_scene format=3 uid="uid://das3b27j8k03q"]
 
-[ext_resource type="Texture2D" path="res://Ryan/ASSET/Gemini_Generated_Image_uh6kn1uh6kn1uh6k-removebg-preview (1).png" id="1_1sic0"]
-[ext_resource type="Script" path="res://Ryan/scenes/shrine.gd" id="1_40wtv"]
+[ext_resource type="Texture2D" uid="uid://on0x0ucy3u3h" path="res://Ryan/ASSET/Gemini_Generated_Image_uh6kn1uh6kn1uh6k-removebg-preview (1).png" id="1_1sic0"]
+[ext_resource type="Script" uid="uid://bygk3l2y12c7" path="res://Ryan/scenes/shrine.gd" id="1_40wtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmvtr"]
-size = Vector2(247, 143)
+size = Vector2(193, 107)
 
-[node name="Shrine" type="Node2D" unique_id=239808019]
+[node name="Shrine" type="Node2D" unique_id=1025391130]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403950919]
-
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1261798101]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="DialogueLabel" type="Label" parent="CanvasLayer/Panel" unique_id=880183887]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1876874475]
+[node name="Area2D" type="Area2D" parent="." unique_id=987266246]
 script = ExtResource("1_40wtv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1900596573]
-position = Vector2(2, 78)
+position = Vector2(-41, 190)
 shape = SubResource("RectangleShape2D_bmvtr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=522572296]
+position = Vector2(-50, 97)
 texture = ExtResource("1_1sic0")
 
 [node name="InteractLabel" type="Label" parent="Area2D" unique_id=1091388719]
 visible = false
-offset_left = -60.0
-offset_top = 33.0
-offset_right = 64.0
-offset_bottom = 56.0
+offset_left = -113.0
+offset_top = 130.0
+offset_right = 11.0
+offset_bottom = 153.0
 text = "[E] Begin Ascent"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403950919]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1261798101]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_top = -141.0
+offset_right = -357.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueLabel" type="Label" parent="CanvasLayer/Panel" unique_id=880183887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 3
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dg07kvlirojrh" path="res://Ryan/ASSET/plant repack.png" id="1_4u6rh"]
 [ext_resource type="Texture2D" uid="uid://cl6p3ddfyxi4a" path="res://Ryan/ASSET/tilemap.png" id="2_rykfn"]
+[ext_resource type="PackedScene" uid="uid://cpkpa0dmt5c6t" path="res://Ryan/scenes/sign.tscn" id="5_67s3c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vak8g"]
 texture = ExtResource("1_4u6rh")
@@ -737,3 +738,5 @@ tile_map_data = PackedByteArray("AAD8//r/AAABAAUAAAD8//v/AAABAAUAAAD8//z/AAABAAU
 tile_set = SubResource("TileSet_l1cu7")
 
 [node name="Sign" type="TileMapLayer" parent="." unique_id=420293533]
+
+[node name="Sign2" parent="." unique_id=1176966440 instance=ExtResource("5_67s3c")]
