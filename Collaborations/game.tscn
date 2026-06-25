@@ -5,7 +5,7 @@
 
 [node name="Game" unique_id=2025736409 instance=ExtResource("1_f3pip")]
 
-[node name="Player" parent="." index="1" unique_id=448614660]
+[node name="Player" parent="." index="0" unique_id=448614660]
 z_index = 2
 
-[node name="Map" parent="." index="2" unique_id=1295569904 instance=ExtResource("2_0qiym")]
+[node name="Map2" parent="." index="2" unique_id=1295569904 instance=ExtResource("2_0qiym")]
