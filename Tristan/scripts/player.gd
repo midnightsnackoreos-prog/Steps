@@ -8,6 +8,5 @@ func _process(delta: float) -> void:
 	# var direction := Input.get_axis("ui_left", "ui_right")	
 	
 	var direction := Input.get_vector("left","right","up","down")
-	print(direction)
 	if direction.x != 0 || direction.y != 0:
 		position += direction * SPEED * delta

@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://rmxoid0vm7wu"]
 
 [ext_resource type="PackedScene" uid="uid://bqvdg7pouxqmn" path="res://Tristan/Scenes/game.tscn" id="1_f3pip"]
+[ext_resource type="PackedScene" uid="uid://2kbctv414qu3" path="res://Ryan/scenes/map.tscn" id="2_0qiym"]
 
 [node name="Game" unique_id=2025736409 instance=ExtResource("1_f3pip")]
+
+[node name="Player" parent="." index="1" unique_id=448614660]
+z_index = 2
+
+[node name="Map" parent="." index="2" unique_id=1295569904 instance=ExtResource("2_0qiym")]
