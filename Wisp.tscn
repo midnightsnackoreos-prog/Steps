@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bo4duyqcgxudn"]
+
+[ext_resource type="Script" uid="uid://cwi3b0kfbdo5m" path="res://Milton/SCRIPT/wisp.gd" id="1_ycy84"]
+[ext_resource type="Texture2D" uid="uid://ckx1srvw644m8" path="res://Milton/ASSETS/WispPL.png" id="2_oy354"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jbio"]
+atlas = ExtResource("2_oy354")
+region = Rect2(0, 0, 54, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujfoj"]
+atlas = ExtResource("2_oy354")
+region = Rect2(0, 32, 54, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux841"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jbio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujfoj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6s5kp"]
+radius = 9.0
+
+[node name="wisp" type="Node2D" unique_id=787527044]
+
+[node name="Wisp" type="CharacterBody2D" parent="." unique_id=1831791830]
+texture_filter = 1
+script = ExtResource("1_ycy84")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Wisp" unique_id=1138419257]
+sprite_frames = SubResource("SpriteFrames_ux841")
+frame_progress = 0.6628281
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wisp" unique_id=401731994]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_6s5kp")

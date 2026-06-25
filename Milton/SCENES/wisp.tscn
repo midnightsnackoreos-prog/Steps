@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p41n4cfshls6"]
 
-[ext_resource type="Script" uid="uid://cwi3b0kfbdo5m" path="res://SCRIPT/wisp.gd" id="1_737wa"]
-[ext_resource type="Texture2D" uid="uid://ckx1srvw644m8" path="res://ASSETS/WispPL.png" id="2_darcm"]
+[ext_resource type="Script" uid="uid://cwi3b0kfbdo5m" path="res://Milton/SCRIPT/wisp.gd" id="1_737wa"]
+[ext_resource type="Texture2D" uid="uid://ckx1srvw644m8" path="res://Milton/ASSETS/WispPL.png" id="2_darcm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x60hi"]
 atlas = ExtResource("2_darcm")
@@ -41,17 +41,3 @@ frame_progress = 0.012021037
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wisp" unique_id=596113365]
 position = Vector2(2, -14)
 shape = SubResource("RectangleShape2D_6ocxd")
-
-[node name="PlayerPh" type="CharacterBody2D" parent="." unique_id=1426096379]
-position = Vector2(203, -3)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerPh" unique_id=1888284350]
-position = Vector2(0, -14)
-sprite_frames = SubResource("SpriteFrames_7svck")
-frame_progress = 0.71918935
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPh" unique_id=383087151]
-position = Vector2(2, -14)
-shape = SubResource("RectangleShape2D_6ocxd")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1496310678]
