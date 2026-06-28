@@ -37,7 +37,7 @@ func _process(_delta):
 
 		else: 
 			panel.visible = true
-			dialogue.text = ("You have regained 25 energy.")
+			dialogue.text = ("Good luck, traveler.")
 			interact_label.visible = false
 			if player:
 				player.can_move = false
