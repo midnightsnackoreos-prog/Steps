@@ -13,7 +13,7 @@ z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1307286276]
 position = Vector2(-6, -6)
-zoom = Vector2(1.84, 1.84)
+zoom = Vector2(3.56, 3.56)
 
 [node name="Map" parent="." unique_id=1295569904 instance=ExtResource("1_e2o6t")]
 
