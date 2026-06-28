@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpkpa0dmt5c6t"]
 
-[ext_resource type="Script" uid="uid://3ohufaw8gws1" path="res://Ryan/scripts/area_2d.gd" id="1_mjqlc"]
+[ext_resource type="Script" uid="uid://3ohufaw8gws1" path="res://Ryan/scripts/sign.gd" id="1_mjqlc"]
 [ext_resource type="Texture2D" uid="uid://bgp3yp76k7khu" path="res://Ryan/ASSET/Sign.png" id="2_ik4hd"]
 [ext_resource type="Texture2D" uid="uid://c8dplxj07s27w" path="res://Ryan/ASSET/New Piskel (3).png" id="3_kixpr"]
 
@@ -9,18 +9,18 @@ size = Vector2(52, 25)
 
 [node name="Sign" type="Node2D" unique_id=1176966440]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1172565789]
+[node name="Sign" type="Area2D" parent="." unique_id=1172565789]
 script = ExtResource("1_mjqlc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=497487214]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign" unique_id=497487214]
 position = Vector2(51, -133)
 shape = SubResource("RectangleShape2D_d5ybl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1687576410]
+[node name="Sprite2D" type="Sprite2D" parent="Sign" unique_id=1687576410]
 position = Vector2(51, -145)
 texture = ExtResource("2_ik4hd")
 
-[node name="InteractLabel" type="Label" parent="Area2D" unique_id=647195572]
+[node name="InteractLabel" type="Label" parent="Sign" unique_id=647195572]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,5 +64,5 @@ grow_vertical = 2
 text = "hello"
 autowrap_mode = 3
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Sign" to="Sign" method="_on_body_entered"]
+[connection signal="body_exited" from="Sign" to="Sign" method="_on_body_exited"]
