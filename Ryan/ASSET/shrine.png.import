@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://on0x0ucy3u3h"
-path="res://.godot/imported/Gemini_Generated_Image_uh6kn1uh6kn1uh6k-removebg-preview (1).png-10a56cb8d78d2936ca59dac5159c3094.ctex"
+path="res://.godot/imported/shrine.png-7c4becdd02cd21d6d03bc0f26e246394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ryan/ASSET/Gemini_Generated_Image_uh6kn1uh6kn1uh6k-removebg-preview (1).png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_uh6kn1uh6kn1uh6k-removebg-preview (1).png-10a56cb8d78d2936ca59dac5159c3094.ctex"]
+source_file="res://Ryan/ASSET/shrine.png"
+dest_files=["res://.godot/imported/shrine.png-7c4becdd02cd21d6d03bc0f26e246394.ctex"]
 
 [params]
 
