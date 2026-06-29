@@ -4245,10 +4245,12 @@ position = Vector2(0, 43.000004)
 scale = Vector2(0.86, 0.86)
 
 [node name="InteractLabel" parent="Shrine/Area2D" index="2" unique_id=1091388719]
-offset_top = 108.0
-offset_right = 74.0
-offset_bottom = 137.0
+offset_left = -73.0
+offset_top = 104.0
+offset_right = 87.0
+offset_bottom = 149.0
 theme_override_font_sizes/font_size = 17
+text = "[E] Restore Energy"
 autowrap_mode = 3
 
 [node name="VendingMachine" parent="." unique_id=936309876 instance=ExtResource("7_ld47v")]
@@ -4278,6 +4280,9 @@ offset_bottom = -36.0
 
 [node name="DialogueLabel" parent="VendingMachine/CanvasLayer/Panel" index="0" unique_id=858130853]
 theme_override_font_sizes/font_size = 30
+
+[node name="SecondArea" type="Marker2D" parent="." unique_id=1019180031]
+position = Vector2(0, -1300)
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer/EnergyBar"]
