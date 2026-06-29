@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cm4inw2paf7ug" path="res://Collaborations/scenes/player.tscn" id="1_tu25v"]
 [ext_resource type="PackedScene" uid="uid://2kbctv414qu3" path="res://Ryan/scenes/map.tscn" id="2_ld47v"]
-[ext_resource type="Texture2D" uid="uid://4vamcw5nho0l" path="res://Ryan/ASSET/stairs.png" id="3_jx3kj"]
+[ext_resource type="Texture2D" uid="uid://4vamcw5nho0l" path="res://Ryan/assets/stairs.png" id="3_jx3kj"]
 [ext_resource type="PackedScene" uid="uid://p41n4cfshls6" path="res://Milton/SCENES/wisp.tscn" id="4_4fwr1"]
 [ext_resource type="PackedScene" uid="uid://cpkpa0dmt5c6t" path="res://Ryan/scenes/sign.tscn" id="5_2n5je"]
 [ext_resource type="PackedScene" uid="uid://das3b27j8k03q" path="res://Ryan/scenes/shrine.tscn" id="6_oe54y"]
