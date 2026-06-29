@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csv7t8yv4q5qw"
-path="res://.godot/imported/MINIBOSS1.png-0d5e5246a02a1281165979490754113f.ctex"
+uid="uid://dg07kvlirojrh"
+path="res://.godot/imported/plant repack.png-1129c5663368c2f7606df2ec11a9ecc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Milton/ASSETS/MINIBOSS1.png"
-dest_files=["res://.godot/imported/MINIBOSS1.png-0d5e5246a02a1281165979490754113f.ctex"]
+source_file="res://Ryan/ASSET/plant repack.png"
+dest_files=["res://.godot/imported/plant repack.png-1129c5663368c2f7606df2ec11a9ecc2.ctex"]
 
 [params]
 

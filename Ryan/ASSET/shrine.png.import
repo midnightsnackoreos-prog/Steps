@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkw0p03h3igwk"
-path="res://.godot/imported/icon.svg-ba57a8fed0f94b937237f15b55d50077.ctex"
+uid="uid://on0x0ucy3u3h"
+path="res://.godot/imported/shrine.png-7c4becdd02cd21d6d03bc0f26e246394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Milton/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-ba57a8fed0f94b937237f15b55d50077.ctex"]
+source_file="res://Ryan/ASSET/shrine.png"
+dest_files=["res://.godot/imported/shrine.png-7c4becdd02cd21d6d03bc0f26e246394.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
