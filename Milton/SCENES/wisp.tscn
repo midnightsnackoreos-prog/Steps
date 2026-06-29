@@ -22,7 +22,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ocxd"]
@@ -36,9 +36,12 @@ script = ExtResource("1_737wa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="wisp" unique_id=1793580729]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_7svck")
+autoplay = "default"
 frame_progress = 0.012021037
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wisp" unique_id=596113365]
 position = Vector2(2, -14)
 shape = SubResource("RectangleShape2D_6ocxd")
 disabled = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="wisp" unique_id=1856345380]
