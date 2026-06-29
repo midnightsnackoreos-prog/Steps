@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5cbe8g5s5t0a" path="res://Ryan/ASSET/vending machine.png" id="1_np1fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dngb"]
+size = Vector2(369.5, 186)
 
 [node name="VendingMachine" type="Node2D" unique_id=936309876]
 
@@ -11,7 +12,46 @@
 script = ExtResource("1_3yg16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1297420862]
+position = Vector2(8.25, 160)
 shape = SubResource("RectangleShape2D_0dngb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=492382324]
 texture = ExtResource("1_np1fu")
+
+[node name="InteractLabel" type="Label" parent="Area2D" unique_id=1794859173]
+visible = false
+offset_left = 148.0
+offset_top = 58.0
+offset_right = 387.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 37
+text = "[E] 25 Coins "
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=181792111]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1426172214]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_top = -141.0
+offset_right = -357.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueLabel" type="Label" parent="CanvasLayer/Panel" unique_id=858130853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 3
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
