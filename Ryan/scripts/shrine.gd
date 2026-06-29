@@ -38,6 +38,7 @@ func _process(_delta):
 			interact_label.text = "[E] Restore Energy"
 			if player:
 				player.global_position = teleport_marker.global_position
+				player.can_move = true
 			return
 
 
@@ -49,4 +50,5 @@ func _process(_delta):
 			player.can_move = false
 				
 		waiting_to_teleport = true
+		
 			
