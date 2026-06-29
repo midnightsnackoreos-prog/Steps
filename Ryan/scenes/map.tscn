@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://2kbctv414qu3"]
 
-[ext_resource type="Texture2D" uid="uid://dg07kvlirojrh" path="res://Ryan/assets/plant repack.png" id="1_4u6rh"]
-[ext_resource type="Texture2D" uid="uid://cl6p3ddfyxi4a" path="res://Ryan/assets/tilemap.png" id="2_rykfn"]
-[ext_resource type="Texture2D" uid="uid://4vamcw5nho0l" path="res://Ryan/assets/stairs.png" id="3_p0kk2"]
+[ext_resource type="Texture2D" uid="uid://dg07kvlirojrh" path="res://Ryan/ASSET/plant repack.png" id="1_4u6rh"]
+[ext_resource type="Texture2D" uid="uid://cl6p3ddfyxi4a" path="res://Ryan/ASSET/tilemap.png" id="2_rykfn"]
+[ext_resource type="Texture2D" uid="uid://4vamcw5nho0l" path="res://Ryan/ASSET/stairs.png" id="3_p0kk2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vak8g"]
 texture = ExtResource("1_4u6rh")

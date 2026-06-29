@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cpkpa0dmt5c6t"]
 
 [ext_resource type="Script" uid="uid://3ohufaw8gws1" path="res://Ryan/scripts/sign.gd" id="1_mjqlc"]
-[ext_resource type="Texture2D" uid="uid://bgp3yp76k7khu" path="res://Ryan/assets/Sign.png" id="2_ik4hd"]
-[ext_resource type="Texture2D" uid="uid://c8dplxj07s27w" path="res://Ryan/assets/New Piskel (3).png" id="3_kixpr"]
+[ext_resource type="Texture2D" uid="uid://bgp3yp76k7khu" path="res://Ryan/ASSET/Sign.png" id="2_ik4hd"]
+[ext_resource type="Texture2D" uid="uid://c8dplxj07s27w" path="res://Ryan/ASSET/New Piskel (3).png" id="3_kixpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5ybl"]
 size = Vector2(52, 25)
