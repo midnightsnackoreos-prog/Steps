@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bq7q24e5sck66"]
 
+[ext_resource type="Script" uid="uid://daqvp27p83xic" path="res://Ryan/scripts/vending_machine.gd" id="1_3yg16"]
 [ext_resource type="Texture2D" uid="uid://b5cbe8g5s5t0a" path="res://Ryan/ASSET/vending machine.png" id="1_np1fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dngb"]
@@ -7,6 +8,7 @@
 [node name="VendingMachine" type="Node2D" unique_id=936309876]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=542954959]
+script = ExtResource("1_3yg16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1297420862]
 shape = SubResource("RectangleShape2D_0dngb")
