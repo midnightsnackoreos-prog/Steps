@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4vamcw5nho0l"
-path="res://.godot/imported/stairs.png-1347d0d82a55bc3720cec491fb893b9b.ctex"
+uid="uid://jkb1k43nqytr"
+path="res://.godot/imported/CHARGING.png-09754f0c1e4d0c7aa7fb765170991e60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ryan/ASSET/stairs.png"
-dest_files=["res://.godot/imported/stairs.png-1347d0d82a55bc3720cec491fb893b9b.ctex"]
+source_file="res://Milton/ASSETS/CHARGING.png"
+dest_files=["res://.godot/imported/CHARGING.png-09754f0c1e4d0c7aa7fb765170991e60.ctex"]
 
 [params]
 
