@@ -4235,6 +4235,21 @@ autowrap_mode = 3
 position = Vector2(399, -330)
 scale = Vector2(0.4, 0.4)
 
+[node name="CollisionShape2D" parent="VendingMachine/Area2D" parent_id_path=PackedInt32Array(936309876, 542954959) index="0" unique_id=1297420862]
+position = Vector2(-22.499966, 155)
+
+[node name="Sprite2D" parent="VendingMachine/Area2D" parent_id_path=PackedInt32Array(936309876, 542954959) index="1" unique_id=492382324]
+position = Vector2(-17.5, 85)
+scale = Vector2(0.65, 0.65)
+
+[node name="InteractLabel" parent="VendingMachine/Area2D" parent_id_path=PackedInt32Array(936309876, 542954959) index="2" unique_id=1794859173]
+visible = false
+offset_left = 82.499985
+offset_top = 112.49997
+offset_right = 321.5
+offset_bottom = 163.49997
+theme_override_font_sizes/font_size = 34
+
 [editable path="Player"]
 [editable path="Player/CanvasLayer/EnergyBar"]
 [editable path="Map"]
