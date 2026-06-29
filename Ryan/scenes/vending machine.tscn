@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c6nrje164xu7"]
+[gd_scene format=3 uid="uid://bq7q24e5sck66"]
+
+[ext_resource type="Texture2D" uid="uid://b5cbe8g5s5t0a" path="res://Ryan/ASSET/vending machine.png" id="1_np1fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dngb"]
 
@@ -10,3 +12,4 @@
 shape = SubResource("RectangleShape2D_0dngb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=492382324]
+texture = ExtResource("1_np1fu")
