@@ -11,12 +11,18 @@ extends CharacterBody2D
 const SPEED = 300.0
 
 var can_move = true
-var is_attacking=false
+var is_attacking: bool=false
 var last_direction:Vector2= Vector2.RIGHT
+var hitbox_offset: Vector2
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing_sword: AudioStreamPlayer2D = $SwingSword
+@onready var hitbox: Area2D = $Hitbox
 
+
+func _ready() -> void:
+	hitbox_offset=hitbox.position
 
 func process_movement(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -26,6 +32,7 @@ func process_movement(_delta: float) -> void:
 	if direction != Vector2.ZERO:
 		velocity = direction * SPEED
 		last_direction=direction
+		update_hitbox_offset()
 	else:
 		velocity=Vector2.ZERO
 	
@@ -89,3 +96,25 @@ func attack()->void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_attacking:
 		is_attacking=false
+
+
+
+
+#-------------------
+#HITBOX
+#-------------------
+
+func update_hitbox_offset()->void:
+	var x := hitbox_offset.x
+	var y := hitbox_offset.y
+	
+	print(last_direction)
+	match last_direction:
+		Vector2.LEFT:
+			hitbox.position = Vector2(-x,y)
+		Vector2.RIGHT:
+			hitbox.position = Vector2(x,y)
+		Vector2.UP:
+			hitbox.position = Vector2(y,-x)
+		Vector2.DOWN:
+			hitbox.position = Vector2(-y,x)
