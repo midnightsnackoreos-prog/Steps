@@ -557,9 +557,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k8v1x")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_down",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -586,9 +586,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3lnp6")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_left",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -615,9 +615,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ty1u0")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_right",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -644,9 +644,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2rf0d")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_up",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1005,8 +1005,10 @@ script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=230395929]
 sprite_frames = SubResource("SpriteFrames_n7ghd")
-animation = &"run_up"
+animation = &"attack1_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2002725645]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_nvl01")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
