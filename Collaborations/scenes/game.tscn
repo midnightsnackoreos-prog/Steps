@@ -5716,7 +5716,7 @@ offset_bottom = -36.0
 theme_override_font_sizes/font_size = 30
 
 [node name="SecondArea" type="Marker2D" parent="." unique_id=1019180031]
-position = Vector2(0, -1500)
+position = Vector2(0, -1550)
 
 [node name="BGMusic" parent="." unique_id=245248074 instance=ExtResource("12_hcdme")]
 volume_db = 10.0
