@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://das3b27j8k03q" path="res://Ryan/scenes/shrine.tscn" id="6_oe54y"]
 [ext_resource type="PackedScene" uid="uid://bq7q24e5sck66" path="res://Ryan/scenes/vending machine.tscn" id="7_ld47v"]
 [ext_resource type="Texture2D" uid="uid://beh81b2mwvmos" path="res://Collaborations/assets/Texture/TX Props.png" id="7_oe54y"]
+[ext_resource type="PackedScene" uid="uid://ct55gq1l88d6f" path="res://Collaborations/bg_music.tscn" id="12_hcdme"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6vdl"]
 texture = ExtResource("3_jx3kj")
@@ -5426,9 +5427,8 @@ tile_set = SubResource("TileSet_lmga5")
 [node name="wisp" parent="." unique_id=2056561412 instance=ExtResource("4_4fwr1")]
 position = Vector2(1, 0)
 
-[node name="wisp" parent="wisp" index="0" unique_id=1034952120 node_paths=PackedStringArray("target_to_chase")]
+[node name="wisp" parent="wisp" index="0" unique_id=1034952120]
 position = Vector2(10, 100)
-target_to_chase = NodePath("../../Player")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="wisp" unique_id=701829275]
 visible = false
@@ -5516,6 +5516,9 @@ theme_override_font_sizes/font_size = 30
 
 [node name="SecondArea" type="Marker2D" parent="." unique_id=1019180031]
 position = Vector2(0, -1300)
+
+[node name="BGMusic" parent="." unique_id=245248074 instance=ExtResource("12_hcdme")]
+volume_db = 10.0
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer/EnergyBar"]

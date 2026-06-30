@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ct55gq1l88d6f"]
+
+[ext_resource type="AudioStream" uid="uid://bssgr0dwtkxni" path="res://Ryan/music/Ambient 2.mp3" id="1_xpu1g"]
+
+[node name="BGMusic" type="AudioStreamPlayer2D" unique_id=245248074]
+stream = ExtResource("1_xpu1g")
+autoplay = true
