@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d03dqpyflsg2f" path="res://Tristan/Sprites/Sprites/ATTACK 2/attack2_right.png" id="8_e85va"]
 [ext_resource type="Texture2D" uid="uid://bxa4bxqoj4ons" path="res://Tristan/Sprites/Sprites/RUN/run_up.png" id="9_78ovo"]
 [ext_resource type="Texture2D" uid="uid://cp2cliwmor6yi" path="res://Tristan/Sprites/Sprites/ATTACK 2/attack2_up.png" id="9_xorqq"]
+[ext_resource type="AudioStream" uid="uid://ca0brarnkduk0" path="res://Tristan/Assets/530444__mellau__whoosh-short-4.wav" id="18_g824v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x313m"]
 atlas = ExtResource("2_h81lc")
@@ -1010,5 +1011,9 @@ animation = &"attack1_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2002725645]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_nvl01")
+
+[node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1639690106]
+stream = ExtResource("18_g824v")
+pitch_scale = 3.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -15,6 +15,8 @@ var is_attacking=false
 var last_direction:Vector2= Vector2.RIGHT
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var swing_sword: AudioStreamPlayer2D = $SwingSword
+
 
 func process_movement(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -37,8 +39,13 @@ func process_movement(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and not is_attacking:
 		attack()
+	
+	
+	if is_attacking:
+		velocity=Vector2.ZERO
+		return
 	
 	process_movement(delta)
 	move_and_slide()
@@ -71,6 +78,7 @@ func play_animation(prefix: String, dir:Vector2) -> void:
 
 func attack()->void:
 	is_attacking=true
+	swing_sword.play()
 	play_animation("attack1", last_direction)
 	print("Attack")
 
