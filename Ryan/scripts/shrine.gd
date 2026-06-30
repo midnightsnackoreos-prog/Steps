@@ -4,6 +4,7 @@ extends Area2D
 @onready var dialogue = $"../CanvasLayer/Panel/DialogueLabel"
 @onready var interact_label = $InteractLabel
 @onready var teleport_marker = $"../../SecondArea"
+@onready var animation_player = $"../../GlobalUI/AnimationPlayer"
 
 
 var used = false
@@ -37,7 +38,10 @@ func _process(_delta):
 			panel.visible = false
 			interact_label.text = "[E] Restore Energy"
 			if player:
+				animation_player.play("Fade to black")
+				await animation_player.animation_finished
 				player.global_position = teleport_marker.global_position
+				animation_player.play("fadein")
 				player.can_move = true
 			return
 

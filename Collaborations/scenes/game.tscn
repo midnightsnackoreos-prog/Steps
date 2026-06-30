@@ -5565,6 +5565,59 @@ vertices = PackedVector2Array(382.96094, 29.117188, 383.96094, -229.6875, 398.00
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7, 8), PackedInt32Array(8, 7, 9, 10, 11), PackedInt32Array(10, 12, 11), PackedInt32Array(8, 11, 13)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-365, 250, 409, 252, 408, -239, 374, -240, 373, 19, 203, 17, 201, -99, 248, -106, 252, -212, 268, -213, 264, -448, -263, -452, -270, -133, -370, -129)])
 
+[sub_resource type="Animation" id="Animation_lmga5"]
+resource_name = "Fade to black"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../GlobalUI/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qepxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../GlobalUI/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rdtid"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../GlobalUI/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wgew"]
+_data = {
+&"Fade to black": SubResource("Animation_lmga5"),
+&"RESET": SubResource("Animation_qepxm"),
+&"fadein": SubResource("Animation_rdtid")
+}
+
 [node name="Game" type="Node2D" unique_id=2025736409]
 
 [node name="Player" parent="." unique_id=448614660 instance=ExtResource("1_tu25v")]
@@ -5720,6 +5773,20 @@ position = Vector2(0, -1550)
 
 [node name="BGMusic" parent="." unique_id=245248074 instance=ExtResource("12_hcdme")]
 volume_db = 10.0
+
+[node name="GlobalUI" type="CanvasLayer" parent="." unique_id=1964119624]
+
+[node name="ColorRect" type="ColorRect" parent="GlobalUI" unique_id=2057854256]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlobalUI" unique_id=2013304618]
+root_node = NodePath("../../Shrine/CanvasLayer")
+libraries/ = SubResource("AnimationLibrary_8wgew")
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer/EnergyBar"]
