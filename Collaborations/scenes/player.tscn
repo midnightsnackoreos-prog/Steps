@@ -6,6 +6,7 @@
 [sub_resource type="FontVariation" id="FontVariation_r2hm8"]
 
 [node name="Player" unique_id=448614660 instance=ExtResource("1_hdlcn")]
+collision_layer = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="2" unique_id=527194705]
 
