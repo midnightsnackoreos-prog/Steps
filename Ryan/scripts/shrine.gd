@@ -38,7 +38,7 @@ func _process(_delta):
 			
 			panel.visible = false
 			interact_label.text = "[E] Restore Energy"
-			energy_manager.restore(100.0)
+			
 			if player:
 				animation_player.play("Fade to black")
 				await animation_player.animation_finished
@@ -50,6 +50,7 @@ func _process(_delta):
 
 		if !panel.visible:
 			panel.visible = true
+			energy_manager.restore(energy_manager.max_energy)
 			dialogue.text = ("Your energy has been restored.\n Press [E] to continue your journey.")
 			interact_label.text = "[E] Continue"
 		if player:

@@ -1,8 +1,10 @@
 extends ProgressBar
 
-@onready var timer = $Timer
-@onready var damage_bar = $DamageBar
 @onready var energy_manager = $"../../../../EnergyManager"
 
-
-var health = 0.0
+func _ready():
+	max_value = energy_manager.max_energy
+	value = energy_manager.energy
+	
+func _process(_delta):
+	value = energy_manager.energy
