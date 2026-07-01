@@ -26,7 +26,12 @@ var player_chase = false
 var player = null
 var health: int = 100
 var max_health := 100
+<<<<<<< Updated upstream
 var knockback=Vector2.ZERO
+=======
+var knockback = Vector2.ZERO
+
+>>>>>>> Stashed changes
 
 func _ready():
 	$healthbar.visible = false
@@ -36,10 +41,13 @@ func _ready():
 func _physics_process(delta):
 	global_position += knockback * delta
 	knockback = knockback.move_toward(Vector2.ZERO, 1000 * delta)
+<<<<<<< Updated upstream
 	
 	global_position += knockback * delta
 	knockback = knockback.move_toward(Vector2.ZERO, 1000 * delta)
 	
+=======
+>>>>>>> Stashed changes
 	if player_chase:
 		global_position += (player.global_position - global_position) / speed
 		$AnimatedSprite2D.play("CHASE")
@@ -79,10 +87,16 @@ func take_damage(damage : int, knockback_force: Vector2) -> void:
 	health = max(0, health)
 	print(health)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 	
 	knockback=knockback_force
 	
+>>>>>>> Stashed changes
+=======
+	
+	knockback=knockback_force
+		
 >>>>>>> Stashed changes
 	if health <= 0:
 		die()

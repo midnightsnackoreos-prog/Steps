@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cpkpa0dmt5c6t" path="res://Ryan/scenes/sign.tscn" id="5_2n5je"]
 [ext_resource type="PackedScene" uid="uid://das3b27j8k03q" path="res://Ryan/scenes/shrine.tscn" id="6_oe54y"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://bq7q24e5sck66" path="res://Ryan/scenes/vending machine.tscn" id="7_ld47v"]
 =======
+=======
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://c6nrje164xu7" path="res://Ryan/scenes/vending machine.tscn" id="7_ld47v"]
 [ext_resource type="Texture2D" uid="uid://beh81b2mwvmos" path="res://Collaborations/assets/Texture/TX Props.png" id="7_oe54y"]
 [ext_resource type="PackedScene" uid="uid://drqv66rm1vki5" path="res://Ryan/scenes/energy_bar.tscn" id="8_jx3kj"]
