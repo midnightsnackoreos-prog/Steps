@@ -1,8 +1,18 @@
 extends CharacterBody2D
 
+<<<<<<< Updated upstream
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @export var target_to_chase: CharacterBody2D
 const SPEED = 180
+=======
+@onready var detection_icon = $DetectionIcon
+@onready var detection_timer = $DetectionTimer
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@export var target_to_chase: CharacterBody2D
+const SPEED = 180
+
+
+>>>>>>> Stashed changes
 
 <<<<<<< Updated upstream
 func _physics_process(delta: float) -> void:
@@ -24,6 +34,9 @@ func _ready():
 
 
 func _physics_process(delta):
+	global_position += knockback * delta
+	knockback = knockback.move_toward(Vector2.ZERO, 1000 * delta)
+	
 	global_position += knockback * delta
 	knockback = knockback.move_toward(Vector2.ZERO, 1000 * delta)
 	
@@ -65,6 +78,12 @@ func take_damage(damage : int, knockback_force: Vector2) -> void:
 	health -= damage
 	health = max(0, health)
 	print(health)
+<<<<<<< Updated upstream
+=======
+	
+	knockback=knockback_force
+	
+>>>>>>> Stashed changes
 	if health <= 0:
 		die()
 
