@@ -45,7 +45,7 @@ func process_movement(_delta: float) -> void:
 	process_animation(last_direction)
 
 func _physics_process(delta: float) -> void:
-	
+	hitbox.monitoring=false
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		attack()
 	if Input.is_action_just_pressed("attack2") and not is_attacking:
@@ -87,6 +87,7 @@ func play_animation(prefix: String, dir:Vector2) -> void:
 
 func attack()->void:
 	is_attacking=true
+	hitbox.monitoring=true
 	swing_sword.play()
 	play_animation("attack1", last_direction)
 	print("Attack")
@@ -130,3 +131,13 @@ func update_hitbox_offset()->void:
 			#hitbox.position = Vector2(y,-x)
 		#Vector2.DOWN:
 			#hitbox.position = Vector2(-y,x)
+
+
+
+
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if is_attacking and body.name.begins_with("wisp"):
+		print(body.name)
+		print("hit")
