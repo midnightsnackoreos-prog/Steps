@@ -1,22 +1,15 @@
 extends CharacterBody2D
 
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
-@export var target_to_chase: CharacterBody2D
-const SPEED = 180
+@onready var detection_icon = $DetectionIcon
+@onready var detection_timer = $DetectionTimer
 
-<<<<<<< Updated upstream
-func _physics_process(delta: float) -> void:
-	navigation_agent.target_position = target_to_chase.global_position
-	velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
-	move_and_slide()
-=======
 
 var speed = 30
 var player_chase = false
 var player = null
 var health: int = 100
 var max_health := 100
-var knockback=Vector2.ZERO
+
 
 func _ready():
 	$healthbar.visible = false
@@ -24,8 +17,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	global_position += knockback * delta
-	knockback = knockback.move_toward(Vector2.ZERO, 1000 * delta)
 	
 	if player_chase:
 		global_position += (player.global_position - global_position) / speed
@@ -60,19 +51,18 @@ func _on_detection_timer_timeout() -> void:
 
 # DAMAGE AND HEALTH---------------------
 	
-func take_damage(damage : int, knockback_force: Vector2) -> void:
+func take_damage(damage : int, knockback: Vector2) -> void:
 	$healthbar.visible = true
 	health -= damage
 	health = max(0, health)
 	print(health)
+	if knockback != Vector2.ZERO:
+		velocity +=knockback
 	if health <= 0:
 		die()
-
-	knockback=knockback_force
 
 
 func die():
 	queue_free()
 
 	
->>>>>>> Stashed changes
