@@ -208,7 +208,6 @@ frame_progress = 0.46373764
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wisp" unique_id=596113365]
 position = Vector2(2, -14)
 shape = SubResource("RectangleShape2D_6ocxd")
-disabled = true
 
 [node name="healthbar" type="ProgressBar" parent="wisp" unique_id=1576451402]
 z_index = 1
