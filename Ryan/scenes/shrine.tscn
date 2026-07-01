@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmvtr"]
 size = Vector2(163.5, 127.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40wtv"]
+size = Vector2(551, 151)
+
 [node name="Shrine" type="Node2D" unique_id=239808019]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403950919]
@@ -41,6 +44,12 @@ offset_top = 33.0
 offset_right = 64.0
 offset_bottom = 56.0
 text = "[E] Begin Ascent"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=592933913]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=103020829]
+position = Vector2(22.5, 65.5)
+shape = SubResource("RectangleShape2D_40wtv")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
