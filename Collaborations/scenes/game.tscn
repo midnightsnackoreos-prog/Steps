@@ -5671,7 +5671,6 @@ tile_map_data = PackedByteArray("AAAQAIf/AAACAAwAAAAQAIj/AAACAA0AAAAQAIn/AAACAA4
 tile_set = SubResource("TileSet_rdtid")
 
 [node name="wisp" parent="." unique_id=2056561412 instance=ExtResource("4_4fwr1")]
-position = Vector2(500, -2100)
 
 [node name="wisp" parent="wisp" index="0" unique_id=1034952120]
 position = Vector2(10, 100)
