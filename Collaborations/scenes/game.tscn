@@ -5881,6 +5881,7 @@ offset_top = 112.49997
 offset_right = 321.5
 offset_bottom = 163.49997
 theme_override_font_sizes/font_size = 34
+text = "[E] Free!"
 
 [node name="Panel" parent="VendingMachine/CanvasLayer" parent_id_path=PackedInt32Array(936309876, 181792111) index="0" unique_id=1426172214]
 offset_left = -2.0
