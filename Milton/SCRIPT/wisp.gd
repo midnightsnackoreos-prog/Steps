@@ -51,14 +51,17 @@ func _on_detection_timer_timeout() -> void:
 
 # DAMAGE AND HEALTH---------------------
 	
-func take_damage(damage : int) -> void:
+func take_damage(damage : int, knockback: Vector2) -> void:
 	$healthbar.visible = true
 	health -= damage
 	health = max(0, health)
 	print(health)
-	
+	if knockback != Vector2.ZERO:
+		velocity +=knockback
 	if health <= 0:
 		die()
+
+
 func die():
 	queue_free()
 
