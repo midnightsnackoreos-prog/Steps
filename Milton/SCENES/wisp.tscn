@@ -151,9 +151,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5nce")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -201,9 +201,10 @@ script = ExtResource("1_737wa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="wisp" unique_id=1793580729]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_7svck")
-animation = &"slumber"
-autoplay = "slumber"
-frame_progress = 0.46373764
+animation = &"death"
+autoplay = "death"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wisp" unique_id=596113365]
 position = Vector2(2, -14)
@@ -258,7 +259,11 @@ text = "!"
 
 [node name="DetectionTimer" type="Timer" parent="wisp" unique_id=1588213497]
 
+[node name="before death timer" type="Timer" parent="wisp" unique_id=1391326808]
+wait_time = 1.2
+
 [connection signal="timeout" from="wisp/healthbar/Timer" to="wisp/healthbar" method="_on_timer_timeout"]
 [connection signal="body_entered" from="wisp/detection_area" to="wisp" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="wisp/detection_area" to="wisp" method="_on_detection_area_body_exited"]
 [connection signal="timeout" from="wisp/DetectionTimer" to="wisp" method="_on_detection_timer_timeout"]
+[connection signal="timeout" from="wisp/before death timer" to="wisp" method="_on_before_death_timer_timeout"]

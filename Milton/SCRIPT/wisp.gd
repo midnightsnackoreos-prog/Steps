@@ -50,7 +50,7 @@ func _on_detection_timer_timeout() -> void:
 	detection_icon.visible = false
 
 # DAMAGE AND HEALTH---------------------
-
+	
 func take_damage(damage : int) -> void:
 	$healthbar.visible = true
 	health -= damage
@@ -61,3 +61,5 @@ func take_damage(damage : int) -> void:
 		die()
 func die():
 	queue_free()
+
+	
