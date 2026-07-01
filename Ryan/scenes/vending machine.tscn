@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daqvp27p83xic" path="res://Ryan/scripts/vending_machine.gd" id="1_3yg16"]
 [ext_resource type="Texture2D" uid="uid://b5cbe8g5s5t0a" path="res://Ryan/ASSET/vending machine.png" id="1_np1fu"]
+[ext_resource type="AudioStream" uid="uid://jrnsv4ygdicw" path="res://Ryan/sfx/16824_1460744917.mp3" id="3_fxo7i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dngb"]
 size = Vector2(369.5, 186)
@@ -51,6 +52,10 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 autowrap_mode = 3
+
+[node name="sfx_vending" type="AudioStreamPlayer" parent="." unique_id=1583701964]
+stream = ExtResource("3_fxo7i")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

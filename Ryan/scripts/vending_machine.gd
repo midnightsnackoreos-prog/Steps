@@ -3,6 +3,7 @@ extends Area2D
 @onready var dialogue = $"../CanvasLayer/Panel/DialogueLabel"
 @onready var interact_label = $InteractLabel
 @onready var panel = $"../CanvasLayer/Panel"
+@onready var sfx_vending = $"../sfx_vending"
 
 
 var used = false
@@ -36,6 +37,7 @@ func _process(_delta):
 
 		else: 
 			panel.visible = true
+			sfx_vending.play()
 			dialogue.text = ("25 Energy Restored")
 			interact_label.visible = false
 			if player:

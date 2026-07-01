@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bygk3l2y12c7" path="res://Ryan/scripts/shrine.gd" id="1_40wtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmvtr"]
-size = Vector2(163.5, 127.25)
+size = Vector2(203.75, 159.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40wtv"]
 size = Vector2(551, 151)
