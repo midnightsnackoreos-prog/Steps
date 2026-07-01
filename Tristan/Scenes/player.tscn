@@ -674,9 +674,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aaqlp")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_down",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -703,9 +703,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_skubt")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_left",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -732,9 +732,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_otl8b")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_right",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -761,9 +761,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6gayc")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_up",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -998,8 +998,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g824v"]
-size = Vector2(25.5, 47)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g824v"]
+radius = 17.867569
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lx7b7"]
 
@@ -1007,20 +1007,20 @@ size = Vector2(25.5, 47)
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=230395929]
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_n7ghd")
-animation = &"attack1_right"
-frame = 1
+animation = &"attack2_down"
 
 [node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1639690106]
 stream = ExtResource("18_g824v")
 pitch_scale = 3.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1788887957]
-position = Vector2(30.75, 0)
+position = Vector2(30.75, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1864617662]
-position = Vector2(-4.75, -2)
-shape = SubResource("RectangleShape2D_g824v")
+position = Vector2(-0.75, 1)
+shape = SubResource("CircleShape2D_g824v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249856529]
 position = Vector2(6, 3)
