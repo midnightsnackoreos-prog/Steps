@@ -11,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://das3b27j8k03q" path="res://Ryan/scenes/shrine.tscn" id="6_oe54y"]
 [ext_resource type="PackedScene" uid="uid://bq7q24e5sck66" path="res://Ryan/scenes/vending machine.tscn" id="7_ld47v"]
 [ext_resource type="Texture2D" uid="uid://beh81b2mwvmos" path="res://Collaborations/assets/Texture/TX Props.png" id="7_oe54y"]
+[ext_resource type="PackedScene" uid="uid://drqv66rm1vki5" path="res://Ryan/scenes/energy_bar.tscn" id="8_jx3kj"]
 [ext_resource type="Texture2D" uid="uid://c64k0vmxlhqiv" path="res://Collaborations/assets/Texture/TX Tileset Wall.png" id="8_lmga5"]
 [ext_resource type="PackedScene" uid="uid://ct55gq1l88d6f" path="res://Collaborations/bg_music.tscn" id="12_hcdme"]
+[ext_resource type="Script" uid="uid://coq3j7l0bmxa0" path="res://Ryan/scripts/energy_manager.gd" id="14_qepxm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6vdl"]
 texture = ExtResource("3_jx3kj")
@@ -5623,16 +5625,6 @@ _data = {
 [node name="Player" parent="." unique_id=448614660 instance=ExtResource("1_tu25v")]
 z_index = 1
 
-[node name="HealthBar" parent="Player/CanvasLayer/EnergyBar" parent_id_path=PackedInt32Array(448614660, 1979335835) index="0" unique_id=1994565372]
-offset_right = 329.0
-offset_bottom = 56.0
-
-[node name="Label" parent="Player/CanvasLayer" parent_id_path=PackedInt32Array(448614660, 527194705) index="1" unique_id=1007599209]
-offset_top = -7.0
-offset_right = 99.0
-offset_bottom = 38.0
-theme_override_font_sizes/font_size = 32
-
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1307286276]
 position = Vector2(-6, -6)
 zoom = Vector2(1.6, 1.6)
@@ -5788,10 +5780,31 @@ color = Color(0, 0, 0, 0)
 root_node = NodePath("../../Shrine/CanvasLayer")
 libraries/ = SubResource("AnimationLibrary_8wgew")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="GlobalUI" unique_id=1127380158]
+
+[node name="EnergyBar" parent="GlobalUI/CanvasLayer" unique_id=1979335835 instance=ExtResource("8_jx3kj")]
+position = Vector2(0, 30)
+scale = Vector2(1.5, 1.5)
+
+[node name="HealthBar" parent="GlobalUI/CanvasLayer/EnergyBar" index="0" unique_id=1994565372]
+offset_bottom = 10.666667
+value = 100.0
+
+[node name="Label" type="Label" parent="GlobalUI/CanvasLayer" unique_id=1214036670]
+offset_left = 1.0
+offset_top = -6.0
+offset_right = 83.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 25
+text = "Energy"
+
+[node name="EnergyManager" type="Node" parent="." unique_id=1552388309]
+script = ExtResource("14_qepxm")
+
 [editable path="Player"]
-[editable path="Player/CanvasLayer/EnergyBar"]
 [editable path="Map"]
 [editable path="wisp"]
 [editable path="Sign"]
 [editable path="Shrine"]
 [editable path="VendingMachine"]
+[editable path="GlobalUI/CanvasLayer/EnergyBar"]

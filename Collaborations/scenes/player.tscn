@@ -1,34 +1,6 @@
 [gd_scene format=3 uid="uid://cm4inw2paf7ug"]
 
 [ext_resource type="PackedScene" uid="uid://cddkrkh2ia26f" path="res://Tristan/Scenes/player.tscn" id="1_hdlcn"]
-[ext_resource type="PackedScene" uid="uid://drqv66rm1vki5" path="res://Ryan/scenes/energy_bar.tscn" id="2_r2hm8"]
-
-[sub_resource type="FontVariation" id="FontVariation_r2hm8"]
 
 [node name="Player" unique_id=448614660 instance=ExtResource("1_hdlcn")]
 collision_layer = 3
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="2" unique_id=527194705]
-
-[node name="EnergyBar" parent="CanvasLayer" index="0" unique_id=1979335835 instance=ExtResource("2_r2hm8")]
-
-[node name="HealthBar" parent="CanvasLayer/EnergyBar" index="0" unique_id=1994565372]
-offset_left = 1.0
-offset_top = 32.0
-offset_right = 241.0
-offset_bottom = 36.0
-value = 100.0
-
-[node name="damagebar" parent="CanvasLayer/EnergyBar/HealthBar" index="0" unique_id=243049503]
-value = 100.0
-
-[node name="Label" type="Label" parent="CanvasLayer" index="1" unique_id=1007599209]
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 51.0
-offset_bottom = 29.0
-theme_override_fonts/font = SubResource("FontVariation_r2hm8")
-theme_override_font_sizes/font_size = 16
-text = "Player"
-
-[editable path="CanvasLayer/EnergyBar"]

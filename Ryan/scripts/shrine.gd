@@ -5,6 +5,7 @@ extends Area2D
 @onready var interact_label = $InteractLabel
 @onready var teleport_marker = $"../../SecondArea"
 @onready var animation_player = $"../../GlobalUI/AnimationPlayer"
+@onready var energy_manager = $"../../EnergyManager"
 
 
 var used = false
@@ -37,6 +38,7 @@ func _process(_delta):
 			
 			panel.visible = false
 			interact_label.text = "[E] Restore Energy"
+			energy_manager.restore(100.0)
 			if player:
 				animation_player.play("Fade to black")
 				await animation_player.animation_finished
