@@ -146,6 +146,7 @@ func update_hitbox_offset()->void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if is_attacking and body.name.begins_with("wisp"):
-		var _knockback=last_direction*knockback_force
-		body.take_damage(damage)
+		var knockback=last_direction*knockback_force
+		body.take_damage(damage, knockback)
 		print(body.take_damage)
+		print(knockback)
