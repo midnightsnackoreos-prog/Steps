@@ -15,6 +15,7 @@ var is_attacking: bool=false
 var last_direction:Vector2= Vector2.RIGHT
 var hitbox_offset: Vector2
 var strength: int=20
+var damage:int
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing_sword: AudioStreamPlayer2D = $SwingSword
@@ -88,12 +89,15 @@ func play_animation(prefix: String, dir:Vector2) -> void:
 func attack()->void:
 	is_attacking=true
 	hitbox.monitoring=true
+	damage=strength
 	swing_sword.play()
 	play_animation("attack1", last_direction)
 	print("Attack")
 
 func attack2()->void:
 	is_attacking=true
+	hitbox.monitoring=true
+	damage=strength*2
 	swing_sword.play()
 	play_animation("attack2", last_direction)
 	print("Attack2")
@@ -139,5 +143,5 @@ func update_hitbox_offset()->void:
 
 func _on_hitbox_body_entered(body: CharacterBody2D) -> void:
 	if is_attacking and body.name.begins_with("wisp"):
-		body.take_damage(strength)
+		body.take_damage(damage)
 		print(body.take_damage)
