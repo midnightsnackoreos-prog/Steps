@@ -6,6 +6,7 @@ extends CharacterBody2D
 var speed = 30
 var player_chase = false
 var player = null
+var health: int = 100
 
 func _physics_process(delta):
 	
@@ -39,3 +40,9 @@ func _on_detection_area_body_exited(body):
 
 func _on_detection_timer_timeout() -> void:
 	detection_icon.visible = false
+
+# DAMAGE AND HEALTH---------------------
+
+func take_damage(damage : int) -> void:
+	health -= damage
+	print(health)
