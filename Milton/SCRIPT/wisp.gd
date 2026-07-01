@@ -3,10 +3,18 @@ extends CharacterBody2D
 @onready var detection_icon = $DetectionIcon
 @onready var detection_timer = $DetectionTimer
 
+
 var speed = 30
 var player_chase = false
 var player = null
 var health: int = 100
+var max_health := 100
+
+
+func _ready():
+	$healthbar.visible = false
+	detection_icon.visible = false
+
 
 func _physics_process(delta):
 	
@@ -44,5 +52,12 @@ func _on_detection_timer_timeout() -> void:
 # DAMAGE AND HEALTH---------------------
 
 func take_damage(damage : int) -> void:
+	$healthbar.visible = true
 	health -= damage
+	health = max(0, health)
 	print(health)
+	
+	if health <= 0:
+		die()
+func die():
+	queue_free()

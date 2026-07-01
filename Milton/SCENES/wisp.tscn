@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ddlg5cs5wmnnb" path="res://Milton/ASSETS/AWAKENINGWISP.png" id="2_mu0rw"]
 [ext_resource type="Texture2D" uid="uid://beca4bxeueepq" path="res://Milton/ASSETS/DEATHWISP (1).png" id="4_8uqdq"]
 [ext_resource type="Texture2D" uid="uid://dt5whvqiwfyqi" path="res://Milton/ASSETS/WispSlumber.png" id="5_j14uf"]
-[ext_resource type="Script" uid="uid://wchuq7euq7yl" path="res://Milton/SCENES/health_bar.gd" id="6_m2vnl"]
+[ext_resource type="Script" uid="uid://wchuq7euq7yl" path="res://Milton/SCENES/wisp_healthbar.gd" id="6_m2vnl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea0i4"]
 atlas = ExtResource("2_mu0rw")
@@ -193,7 +193,7 @@ bg_color = Color(0.9079417, 0.9079417, 0.90794164, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_e25i7"]
 radius = 205.07803
 
-[node name="wisp" type="Node2D" unique_id=366770284]
+[node name="wisp" type="Node2D" unique_id=366770284 groups=["enemies"]]
 
 [node name="wisp" type="CharacterBody2D" parent="." unique_id=1034952120]
 script = ExtResource("1_737wa")
@@ -217,7 +217,7 @@ offset_right = 16.0
 offset_bottom = -30.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_chd4g")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i328u")
-value = 60.0
+value = 100.0
 show_percentage = false
 script = ExtResource("6_m2vnl")
 
