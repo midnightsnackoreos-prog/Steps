@@ -231,7 +231,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_uebtv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7ech8")
-value = 80.0
+value = 100.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="wisp/healthbar" unique_id=1989245429]
