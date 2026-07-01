@@ -16,6 +16,7 @@ var last_direction:Vector2= Vector2.RIGHT
 var hitbox_offset: Vector2
 var strength: int=20
 var damage:int
+var knockback_force=0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing_sword: AudioStreamPlayer2D = $SwingSword
@@ -90,6 +91,7 @@ func attack()->void:
 	is_attacking=true
 	hitbox.monitoring=true
 	damage=strength
+	knockback_force=0
 	swing_sword.play()
 	play_animation("attack1", last_direction)
 	print("Attack")
@@ -98,6 +100,7 @@ func attack2()->void:
 	is_attacking=true
 	hitbox.monitoring=true
 	damage=strength*2
+	knockback_force=500
 	swing_sword.play()
 	play_animation("attack2", last_direction)
 	print("Attack2")
@@ -143,5 +146,6 @@ func update_hitbox_offset()->void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if is_attacking and body.name.begins_with("wisp"):
+		var _knockback=last_direction*knockback_force
 		body.take_damage(damage)
 		print(body.take_damage)
