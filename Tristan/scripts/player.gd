@@ -121,7 +121,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 #-------------------
 
 func update_hitbox_offset()->void:
-	print(last_direction)
+	# print(last_direction)
 
 	var r = hitbox_offset.x
 	
@@ -144,7 +144,8 @@ func update_hitbox_offset()->void:
 
 
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
+func _on_hitbox_body_entered(body: CharacterBody2D) -> void:
+	print(body.name)
 	if is_attacking and body.name.begins_with("wisp"):
 		var _knockback=last_direction*knockback_force
 		body.take_damage(damage)
