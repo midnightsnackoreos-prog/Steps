@@ -247,6 +247,19 @@ collision_mask = 2
 position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_e25i7")
 
+[node name="DetectionIcon" type="Label" parent="wisp" unique_id=751717733]
+visible = false
+offset_left = -3.0
+offset_top = -63.0
+offset_right = 37.0
+offset_bottom = -29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "!"
+
+[node name="DetectionTimer" type="Timer" parent="wisp" unique_id=1588213497]
+
 [connection signal="timeout" from="wisp/healthbar/Timer" to="wisp/healthbar" method="_on_timer_timeout"]
 [connection signal="body_entered" from="wisp/detection_area" to="wisp" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="wisp/detection_area" to="wisp" method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="wisp/DetectionTimer" to="wisp" method="_on_detection_timer_timeout"]
