@@ -16,7 +16,6 @@ var last_direction:Vector2= Vector2.RIGHT
 var hitbox_offset: Vector2
 var strength: int=20
 var damage:int
-var knockback_force=0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing_sword: AudioStreamPlayer2D = $SwingSword
@@ -53,7 +52,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack2") and not is_attacking:
 		attack2()
 	
-	
 	if is_attacking:
 		velocity=Vector2.ZERO
 		return
@@ -69,7 +67,6 @@ func process_animation(direction) -> void:
 	else:
 		play_animation ("idle", direction)
 
-
 func play_animation(prefix: String, dir:Vector2) -> void:
 	if dir.x>0:
 		animated_sprite_2d.play(prefix + "_right")
@@ -80,9 +77,6 @@ func play_animation(prefix: String, dir:Vector2) -> void:
 	elif dir.y<0:
 		animated_sprite_2d.play(prefix + "_up")
 
-
-
-
 #----------------------
 #ATTACK SECTION
 #----------------------
@@ -91,7 +85,6 @@ func attack()->void:
 	is_attacking=true
 	hitbox.monitoring=true
 	damage=strength
-	knockback_force=0
 	swing_sword.play()
 	play_animation("attack1", last_direction)
 	print("Attack")
@@ -100,21 +93,13 @@ func attack2()->void:
 	is_attacking=true
 	hitbox.monitoring=true
 	damage=strength*2
-	knockback_force=500
 	swing_sword.play()
 	play_animation("attack2", last_direction)
 	print("Attack2")
 
-
-
-
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_attacking:
 		is_attacking=false
-
-
-
 
 #-------------------
 #HITBOX
@@ -139,14 +124,7 @@ func update_hitbox_offset()->void:
 		#Vector2.DOWN:
 			#hitbox.position = Vector2(-y,x)
 
-
-
-
-
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
+func _on_hitbox_body_entered(body: CharacterBody2D) -> void:
 	if is_attacking and body.name.begins_with("wisp"):
-		var knockback=last_direction*knockback_force
-		body.take_damage(damage, knockback)
+		body.take_damage(damage)
 		print(body.take_damage)
-		print(knockback)
