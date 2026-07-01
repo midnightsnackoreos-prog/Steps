@@ -2,9 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://on0x0ucy3u3h" path="res://Ryan/ASSET/shrine.png" id="1_1sic0"]
 [ext_resource type="Script" uid="uid://bygk3l2y12c7" path="res://Ryan/scripts/shrine.gd" id="1_40wtv"]
+[ext_resource type="AudioStream" uid="uid://bhmiddg4wyvua" path="res://Ryan/sfx/shrine_sfx.mp3" id="3_aybgu"]
+[ext_resource type="AudioStream" uid="uid://bknospdiap6m5" path="res://Ryan/sfx/whoosh_sfx.mp3" id="4_r2euy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmvtr"]
-size = Vector2(163.5, 127.25)
+size = Vector2(203.75, 159.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40wtv"]
 size = Vector2(551, 151)
@@ -50,6 +52,14 @@ text = "[E] Begin Ascent"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=103020829]
 position = Vector2(22.5, 65.5)
 shape = SubResource("RectangleShape2D_40wtv")
+
+[node name="sfx_shrine" type="AudioStreamPlayer" parent="." unique_id=1421829367]
+stream = ExtResource("3_aybgu")
+volume_db = -5.0
+
+[node name="whoosh_sfx" type="AudioStreamPlayer" parent="." unique_id=194017126]
+stream = ExtResource("4_r2euy")
+volume_db = -7.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
