@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var detection_icon = $DetectionIcon
 @onready var detection_timer = $DetectionTimer
 
-var speed = 50
+var speed = 30
 var player_chase = false
 var player = null
 
