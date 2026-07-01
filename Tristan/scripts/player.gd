@@ -48,6 +48,8 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		attack()
+	if Input.is_action_just_pressed("attack2") and not is_attacking:
+		attack2()
 	
 	
 	if is_attacking:
@@ -89,6 +91,12 @@ func attack()->void:
 	play_animation("attack1", last_direction)
 	print("Attack")
 
+func attack2()->void:
+	is_attacking=true
+	swing_sword.play()
+	play_animation("attack2", last_direction)
+	print("Attack2")
+
 
 
 
@@ -105,16 +113,20 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 #-------------------
 
 func update_hitbox_offset()->void:
-	var x := hitbox_offset.x
-	var y := hitbox_offset.y
-	
 	print(last_direction)
-	match last_direction:
-		Vector2.LEFT:
-			hitbox.position = Vector2(-x,y)
-		Vector2.RIGHT:
-			hitbox.position = Vector2(x,y)
-		Vector2.UP:
-			hitbox.position = Vector2(y,-x)
-		Vector2.DOWN:
-			hitbox.position = Vector2(-y,x)
+
+	var r = hitbox_offset.x
+	
+	hitbox.position = last_direction * r
+	#var x := hitbox_offset.x
+	#var y := hitbox_offset.y
+	#
+	#match last_direction:
+		#Vector2.LEFT:
+			#hitbox.position = Vector2(-x,y)
+		#Vector2.RIGHT:
+			#hitbox.position = Vector2(x,y)
+		#Vector2.UP:
+			#hitbox.position = Vector2(y,-x)
+		#Vector2.DOWN:
+			#hitbox.position = Vector2(-y,x)
