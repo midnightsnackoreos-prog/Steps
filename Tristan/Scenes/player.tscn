@@ -1002,6 +1002,7 @@ animations = [{
 radius = 17.867569
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lx7b7"]
+size = Vector2(20, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=448614660]
 script = ExtResource("1_onrkg")
@@ -1023,7 +1024,7 @@ position = Vector2(-0.75, 1)
 shape = SubResource("CircleShape2D_g824v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249856529]
-position = Vector2(6, 3)
+position = Vector2(2, 12.5)
 shape = SubResource("RectangleShape2D_lx7b7")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
