@@ -6,6 +6,7 @@
 [sub_resource type="FontVariation" id="FontVariation_r2hm8"]
 
 [node name="Player" unique_id=448614660 instance=ExtResource("1_hdlcn")]
+<<<<<<< Updated upstream
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="2" unique_id=527194705]
 
@@ -31,3 +32,12 @@ theme_override_font_sizes/font_size = 16
 text = "Player"
 
 [editable path="CanvasLayer/EnergyBar"]
+=======
+collision_layer = 3
+
+[node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(1788887957) index="0" unique_id=1864617662]
+position = Vector2(2.25, 1)
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=249856529]
+position = Vector2(1, 6)
+>>>>>>> Stashed changes
