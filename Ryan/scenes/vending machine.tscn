@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daqvp27p83xic" path="res://Ryan/scripts/vending_machine.gd" id="1_3yg16"]
 [ext_resource type="Texture2D" uid="uid://b5cbe8g5s5t0a" path="res://Ryan/ASSET/vending machine.png" id="1_np1fu"]
-[ext_resource type="AudioStream" uid="uid://jrnsv4ygdicw" path="res://Ryan/sfx/16824_1460744917.mp3" id="3_fxo7i"]
+[ext_resource type="AudioStream" uid="uid://jrnsv4ygdicw" path="res://Ryan/sfx/vendingmachine_sfx.mp3" id="3_fxo7i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dngb"]
 size = Vector2(369.5, 186)

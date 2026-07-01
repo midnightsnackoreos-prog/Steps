@@ -6,7 +6,8 @@ extends Area2D
 @onready var teleport_marker = $"../../SecondArea"
 @onready var animation_player = $"../../GlobalUI/AnimationPlayer"
 @onready var energy_manager = $"../../EnergyManager"
-
+@onready var sfx_shrine = $"../sfx_shrine"
+@onready var whoosh_sfx = $"../whoosh_sfx"
 
 var used = false
 var player_near = false
@@ -35,7 +36,7 @@ func _process(_delta):
 	if player_near and Input.is_action_just_pressed("interact"):
 		if waiting_to_teleport:
 			waiting_to_teleport = false
-			
+			whoosh_sfx.play()
 			panel.visible = false
 			interact_label.text = "[E] Restore Energy"
 			
@@ -50,6 +51,7 @@ func _process(_delta):
 
 		if !panel.visible:
 			panel.visible = true
+			sfx_shrine.play()
 			energy_manager.restore(energy_manager.max_energy)
 			dialogue.text = ("Your energy has been restored.\n Press [E] to continue your journey.")
 			interact_label.text = "[E] Continue"
