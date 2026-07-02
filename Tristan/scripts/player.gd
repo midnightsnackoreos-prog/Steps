@@ -14,7 +14,7 @@ var strength: int = 20
 var damage: int
 var health:= 100.0
 var invincible = false
-
+var knockback_force=Vector2.ZERO
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing_sword: AudioStreamPlayer2D = $SwingSword
@@ -43,6 +43,8 @@ func process_movement(_delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		attack()
 
@@ -52,6 +54,7 @@ func _physics_process(delta: float) -> void:
 	if is_attacking:
 		velocity = Vector2.ZERO
 		return
+
 
 	process_movement(delta)
 	move_and_slide()
@@ -86,6 +89,7 @@ func attack() -> void:
 	is_attacking = true
 	hitbox.monitoring = true
 	damage = strength
+	knockback_force=0
 	swing_sword.play()
 	play_animation("attack1", last_direction)
 
@@ -94,6 +98,7 @@ func attack2() -> void:
 	is_attacking = true
 	hitbox.monitoring = true
 	damage = strength * 2
+	knockback_force=500
 	swing_sword.play()
 	play_animation("attack2", last_direction)
 
@@ -115,4 +120,5 @@ func update_hitbox_offset() -> void:
 
 func _on_hitbox_body_entered(body: CharacterBody2D) -> void:
 	if is_attacking and body.name.begins_with("wisp"):
-		body.take_damage(damage)
+		var knockback=last_direction*knockback_force
+		body.take_damage(damage, knockback)
