@@ -242,7 +242,6 @@ value = 100.0
 show_percentage = false
 
 [node name="detection_area" type="Area2D" parent="wisp" unique_id=1158556521]
-visible = false
 collision_layer = 2
 collision_mask = 2
 

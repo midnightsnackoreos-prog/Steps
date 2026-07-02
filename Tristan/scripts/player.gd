@@ -97,8 +97,8 @@ func attack() -> void:
 func attack2() -> void:
 	is_attacking = true
 	hitbox.monitoring = true
-	damage = strength * 2
-	knockback_force=500
+	damage = strength * 1.7
+	knockback_force=700
 	swing_sword.play()
 	play_animation("attack2", last_direction)
 
