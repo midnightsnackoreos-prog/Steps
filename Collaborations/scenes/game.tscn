@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://bqvdg7pouxqmn"]
 
-[ext_resource type="Script" uid="uid://ovqcjdtq7fsv" path="res://Collaborations/scenes/game.gd" id="1_8wgew"]
+[ext_resource type="Script" uid="uid://ovqcjdtq7fsv" path="res://Collaborations/scripts/game.gd" id="1_8wgew"]
 [ext_resource type="PackedScene" uid="uid://cm4inw2paf7ug" path="res://Collaborations/scenes/player.tscn" id="1_tu25v"]
 [ext_resource type="PackedScene" uid="uid://2kbctv414qu3" path="res://Ryan/scenes/map.tscn" id="2_ld47v"]
+[ext_resource type="Script" uid="uid://bhp6nvn2js4sx" path="res://Collaborations/scripts/camera_2d.gd" id="3_c14rm"]
 [ext_resource type="Texture2D" uid="uid://4vamcw5nho0l" path="res://Ryan/ASSET/stairs.png" id="3_jx3kj"]
 [ext_resource type="PackedScene" uid="uid://p41n4cfshls6" path="res://Milton/SCENES/wisp.tscn" id="4_4fwr1"]
 [ext_resource type="Texture2D" uid="uid://df0276c1y2flu" path="res://Collaborations/assets/Texture/TX Struct.png" id="4_jx3kj"]
@@ -14,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://beh81b2mwvmos" path="res://Collaborations/assets/Texture/TX Props.png" id="7_oe54y"]
 [ext_resource type="PackedScene" uid="uid://drqv66rm1vki5" path="res://Ryan/scenes/energy_bar.tscn" id="8_jx3kj"]
 [ext_resource type="Texture2D" uid="uid://c64k0vmxlhqiv" path="res://Collaborations/assets/Texture/TX Tileset Wall.png" id="8_lmga5"]
-[ext_resource type="PackedScene" uid="uid://ct55gq1l88d6f" path="res://Collaborations/bg_music.tscn" id="12_hcdme"]
+[ext_resource type="PackedScene" uid="uid://ct55gq1l88d6f" path="res://Collaborations/scenes/bg_music.tscn" id="12_hcdme"]
 [ext_resource type="Script" uid="uid://coq3j7l0bmxa0" path="res://Ryan/scripts/energy_manager.gd" id="14_qepxm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6vdl"]
@@ -5771,6 +5772,7 @@ z_index = 1
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1307286276]
 position = Vector2(-6, -6)
 zoom = Vector2(1.6, 1.6)
+script = ExtResource("3_c14rm")
 
 [node name="Map" parent="." unique_id=1295569904 instance=ExtResource("2_ld47v")]
 
@@ -5968,6 +5970,13 @@ text = "You have fallen..."
 
 [node name="EnergyManager" type="Node" parent="." unique_id=1552388309]
 script = ExtResource("14_qepxm")
+
+[node name="Label" type="Label" parent="." unique_id=1721162768]
+offset_left = 78.0
+offset_top = -1697.0
+offset_right = 216.0
+offset_bottom = -1674.0
+text = "Press [F] to attack"
 
 [editable path="Player"]
 [editable path="Map"]
