@@ -5822,6 +5822,11 @@ position = Vector2(0, -2100)
 [node name="wisp" parent="wisp" index="0" unique_id=1034952120]
 position = Vector2(10, 100)
 
+[node name="DamageTimer" parent="wisp/wisp" index="0" unique_id=1989245429]
+wait_time = 0.75
+one_shot = false
+autostart = true
+
 [node name="CollisionShape2D" parent="wisp/wisp/detection_area" parent_id_path=PackedInt32Array(2056561412, 1158556521) index="0" unique_id=1519351001]
 position = Vector2(-2, -41)
 

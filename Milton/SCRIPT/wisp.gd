@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var detection_timer = $DetectionTimer
 @onready var player = $"../../Player"
 @onready var energy_manager = $"../../EnergyManager"
+@onready var damage_timer: Timer = $DamageTimer
 
 
 var speed = 30
@@ -11,7 +12,8 @@ var player_chase = false
 var health: int = 100
 var max_health := 100
 var player_near = false
-
+var player_in_damage = false
+var damage_player = null
 
 
 func _ready():
@@ -65,8 +67,26 @@ func die():
 
 func _on_deathbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		damage_player = body
+		player_in_damage = true
+		damage_timer.start()
 		if body.invincible:
 			return
 		energy_manager.spend(15)
 		
 		
+
+
+func _on_deathbox_body_exited(body: Node2D) -> void:
+	if body == damage_player:
+		player_in_damage = false
+		damage_player = null
+		damage_timer.stop()
+		
+
+
+func _on_damage_timer_timeout() -> void:
+	if player_in_damage and damage_player:
+		if !damage_player.invincible:
+			energy_manager.spend(3)
+			
