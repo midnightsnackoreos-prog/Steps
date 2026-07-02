@@ -14,11 +14,12 @@ func _ready():
 
 func _on_player_died():
 	player.can_move = false
-	
+
 	animation_player.play("death")
 	death_label.visible = true
 	energy_bar.visible = false
 	energy_label.visible = false
+	
 	await animation_player.animation_finished
 	death_label.visible = false
 	energy_bar.visible = true
