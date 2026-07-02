@@ -24,6 +24,7 @@ func _on_player_died():
 	death_label.visible = false
 	energy_bar.visible = true
 	energy_label.visible = true
+	player.invincible = false
 	
 	if energy_manager.checkpoint:
 		player.global_position = energy_manager.checkpoint.global_position
