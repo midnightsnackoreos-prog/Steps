@@ -14,7 +14,7 @@ var max_health := 100
 var player_near = false
 var player_in_damage = false
 var damage_player = null
-
+var knockback=Vector2.ZERO
 
 func _ready():
 	$healthbar.visible = false
@@ -22,6 +22,12 @@ func _ready():
 
 
 func _physics_process(delta):
+	
+	global_position += knockback * delta
+	knockback = knockback.move_toward(Vector2.ZERO, 1000 * delta)
+
+	
+	
 	if player_chase:
 		global_position += (player.global_position - global_position) / speed
 		$AnimatedSprite2D.play("CHASE")
@@ -51,12 +57,14 @@ func _on_detection_timer_timeout() -> void:
 
 # DAMAGE AND HEALTH ---------------------
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, knockback_force:Vector2 = Vector2.ZERO) -> void:
 	$healthbar.visible = true
 	health -= damage
 	health = max(0, health)
 	print(health)
-
+	
+	knockback=knockback_force
+	
 	if health <= 0:
 		die()
 
