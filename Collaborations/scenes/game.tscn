@@ -5941,7 +5941,7 @@ scale = Vector2(1.5, 1.5)
 offset_bottom = 10.666667
 value = 100.0
 
-[node name="Label" type="Label" parent="GlobalUI/CanvasLayer" unique_id=1214036670]
+[node name="EnergyLabel" type="Label" parent="GlobalUI/CanvasLayer" unique_id=1214036670]
 offset_left = 1.0
 offset_top = -6.0
 offset_right = 83.0
