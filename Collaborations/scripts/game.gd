@@ -14,7 +14,7 @@ func _ready():
 
 func _on_player_died():
 	player.can_move = false
-
+	player.invincible = true
 	animation_player.play("death")
 	death_label.visible = true
 	energy_bar.visible = false

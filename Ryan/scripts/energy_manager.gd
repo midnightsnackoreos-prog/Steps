@@ -8,14 +8,6 @@ var max_energy := 100.0
 var energy := 100.0
 var checkpoint: Marker2D = null
 
-func _ready():
-	var wisp = $"../wisp/wisp"
-	wisp.energy_changed.connect(_on_energy_changed)
-
-func _on_energy_changed(current, max):
-	$"../GlobalUI/CanvasLayer/EnergyBar/HealthBar".value = current
-#	if current <= 0:
-	
 
 func spend(amount):
 	energy = max(0, energy - amount)
