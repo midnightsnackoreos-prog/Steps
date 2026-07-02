@@ -42,6 +42,7 @@ func _process(_delta):
 			
 			if player:
 				animation_player.play("Fade to black")
+				energy_manager.checkpoint = teleport_marker
 				await animation_player.animation_finished
 				player.global_position = teleport_marker.global_position
 				animation_player.play("fadein")

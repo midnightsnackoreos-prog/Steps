@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bqvdg7pouxqmn"]
 
+[ext_resource type="Script" uid="uid://ovqcjdtq7fsv" path="res://Collaborations/scenes/game.gd" id="1_8wgew"]
 [ext_resource type="PackedScene" uid="uid://cm4inw2paf7ug" path="res://Collaborations/scenes/player.tscn" id="1_tu25v"]
 [ext_resource type="PackedScene" uid="uid://2kbctv414qu3" path="res://Ryan/scenes/map.tscn" id="2_ld47v"]
 [ext_resource type="Texture2D" uid="uid://4vamcw5nho0l" path="res://Ryan/ASSET/stairs.png" id="3_jx3kj"]
@@ -5701,10 +5702,10 @@ tracks/0/path = NodePath("../../GlobalUI/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.56666666, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_qepxm"]
@@ -5719,7 +5720,23 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0.003921569)]
+}
+
+[sub_resource type="Animation" id="Animation_8wgew"]
+resource_name = "death"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../GlobalUI/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.003921569), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_rdtid"]
@@ -5741,10 +5758,12 @@ tracks/0/keys = {
 _data = {
 &"Fade to black": SubResource("Animation_lmga5"),
 &"RESET": SubResource("Animation_qepxm"),
+&"death": SubResource("Animation_8wgew"),
 &"fadein": SubResource("Animation_rdtid")
 }
 
 [node name="Game" type="Node2D" unique_id=2025736409]
+script = ExtResource("1_8wgew")
 
 [node name="Player" parent="." unique_id=448614660 instance=ExtResource("1_tu25v")]
 z_index = 1
@@ -5906,7 +5925,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 0.003921569)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GlobalUI" unique_id=2013304618]
 root_node = NodePath("../../Shrine/CanvasLayer")
@@ -5929,6 +5948,23 @@ offset_right = 83.0
 offset_bottom = 30.0
 theme_override_font_sizes/font_size = 25
 text = "Energy"
+
+[node name="DeathLabel" type="Label" parent="GlobalUI" unique_id=139282679]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.5
+offset_top = -34.5
+offset_right = 205.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8408429, 0, 0.093025066, 1)
+theme_override_font_sizes/font_size = 75
+text = "You have fallen..."
 
 [node name="EnergyManager" type="Node" parent="." unique_id=1552388309]
 script = ExtResource("14_qepxm")
