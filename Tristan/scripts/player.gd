@@ -12,6 +12,7 @@ var last_direction: Vector2 = Vector2.RIGHT
 var hitbox_offset: Vector2
 var strength: int = 20
 var damage: int
+var health:= 100.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var swing_sword: AudioStreamPlayer2D = $SwingSword
@@ -113,3 +114,15 @@ func update_hitbox_offset() -> void:
 func _on_hitbox_body_entered(body: CharacterBody2D) -> void:
 	if is_attacking and body.name.begins_with("wisp"):
 		body.take_damage(damage)
+
+
+func _take_damage(amount: int):
+	health -= amount
+	print("Player HP:", health)
+	if health <= 0:
+		die()
+		
+func die():
+	print("Player died")
+	queue_free()
+		

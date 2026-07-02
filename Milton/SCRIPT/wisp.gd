@@ -2,12 +2,18 @@ extends CharacterBody2D
 
 @onready var detection_icon = $DetectionIcon
 @onready var detection_timer = $DetectionTimer
+@onready var player = $"../../Player"
+@onready var energy_manager = $"../../EnergyManager"
+
+signal energy_changed(current, maximum)
 
 var speed = 30
 var player_chase = false
-var player = null
 var health: int = 100
 var max_health := 100
+var player_near = false
+var energy := 100.0
+var max_energy := 100.0
 
 
 func _ready():
@@ -57,3 +63,16 @@ func take_damage(damage: int) -> void:
 
 func die():
 	queue_free()
+
+
+func spend(amount):
+	energy = max(0, energy - amount)
+	energy_changed.emit(energy, max_energy)
+
+
+func _on_deathbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body._take_damage(20)
+		spend(5)
+		
+		

@@ -171,7 +171,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ocxd"]
-size = Vector2(14, 19)
+size = Vector2(16, 23)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chd4g"]
 
@@ -193,6 +193,9 @@ bg_color = Color(0.9079417, 0.9079417, 0.90794164, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_e25i7"]
 radius = 205.07803
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu0rw"]
+size = Vector2(17, 27)
+
 [node name="wisp" type="Node2D" unique_id=366770284 groups=["enemies"]]
 
 [node name="wisp" type="CharacterBody2D" parent="." unique_id=1034952120]
@@ -201,13 +204,11 @@ script = ExtResource("1_737wa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="wisp" unique_id=1793580729]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_7svck")
-animation = &"death"
+animation = &"CHASE"
 autoplay = "death"
-frame = 7
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wisp" unique_id=596113365]
-position = Vector2(2, -14)
+position = Vector2(1, -12.5)
 shape = SubResource("RectangleShape2D_6ocxd")
 
 [node name="healthbar" type="ProgressBar" parent="wisp" unique_id=1576451402]
@@ -240,6 +241,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="detection_area" type="Area2D" parent="wisp" unique_id=1158556521]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -262,8 +264,16 @@ text = "!"
 [node name="before death timer" type="Timer" parent="wisp" unique_id=1391326808]
 wait_time = 1.2
 
+[node name="DEATHBOX" type="Area2D" parent="wisp" unique_id=67092767]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wisp/DEATHBOX" unique_id=15926648]
+position = Vector2(1.5, -13.5)
+shape = SubResource("RectangleShape2D_mu0rw")
+
 [connection signal="timeout" from="wisp/healthbar/Timer" to="wisp/healthbar" method="_on_timer_timeout"]
 [connection signal="body_entered" from="wisp/detection_area" to="wisp" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="wisp/detection_area" to="wisp" method="_on_detection_area_body_exited"]
 [connection signal="timeout" from="wisp/DetectionTimer" to="wisp" method="_on_detection_timer_timeout"]
 [connection signal="timeout" from="wisp/before death timer" to="wisp" method="_on_before_death_timer_timeout"]
+[connection signal="area_entered" from="wisp/DEATHBOX" to="wisp" method="_on_deathbox_area_entered"]
+[connection signal="body_entered" from="wisp/DEATHBOX" to="wisp" method="_on_deathbox_body_entered"]
