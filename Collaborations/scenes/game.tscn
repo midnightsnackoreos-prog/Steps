@@ -5971,6 +5971,13 @@ text = "You have fallen..."
 [node name="EnergyManager" type="Node" parent="." unique_id=1552388309]
 script = ExtResource("14_qepxm")
 
+[node name="Label" type="Label" parent="." unique_id=1721162768]
+offset_left = 78.0
+offset_top = -1697.0
+offset_right = 216.0
+offset_bottom = -1674.0
+text = "Press [F] to attack"
+
 [editable path="Player"]
 [editable path="Map"]
 [editable path="wisp"]
