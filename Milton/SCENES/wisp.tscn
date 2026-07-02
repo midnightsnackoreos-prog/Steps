@@ -191,7 +191,7 @@ shadow_offset = Vector2(0, 1)
 bg_color = Color(0.9079417, 0.9079417, 0.90794164, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e25i7"]
-radius = 205.07803
+radius = 131.01526
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mu0rw"]
 radius = 44.570168
